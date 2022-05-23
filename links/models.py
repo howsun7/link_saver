@@ -11,5 +11,6 @@ class Category(TimeStampedModel):
 class Link(TimeStampedModel):
     url = models.URLField()
     times_saved = models.PositiveIntegerField()
+    categories = models.ManyToManyField(Category)
 
 
