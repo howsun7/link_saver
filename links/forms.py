@@ -9,4 +9,4 @@ class CategoryForm(forms.ModelForm):
 class LinkForm(forms.ModelForm):
     class Meta:
         model = Link
-        fields = ('url',)
+        fields = ('url', 'categories',)

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <h2 class="pt-4 pb-4">Add new category</h2>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ category_form|crispy }}
+    
+    <div class="btns mt-4">
+    <button type="submit" class="btn btn-success">Add category</button>
+    <a href="{% url 'links:link_create' %}" role="button" class="ms-2 btn btn-secondary">Back</a>
+    </div>
+  </form>   
+</div>
+{% endblock %}

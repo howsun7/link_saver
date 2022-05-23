@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container"> 
-    
+<div class="container">     
     <h2 class="pt-4 pb-4">link_saver Saving Your Life</h2>
-    <a href="{% url 'links:create' %}" role="button" class="float-end btn btn-secondary">Add link</a>
+    <a href="{% url 'links:link_create' %}" role="button" class="float-end btn btn-secondary">Add link</a>
 <table class="table table-hover mt-5">
     <tbody>
+        {% for link in links %}
         <tr>
           <th scope="row">1</th>
-          <td>Mark</td>
+          <td>{{ link.url }}</td>
           <td>Otto</td>
           <td>@mdo</td>
-        </tr>           
+        </tr>
+        {% endfor %}           
       </tbody>
   </table>
 </table>
