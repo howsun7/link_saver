@@ -15,8 +15,9 @@ def link_create(request):
     if request.method == 'POST':
         link_form = LinkForm(request.POST)
         if link_form.is_valid():
-            link_form.save()
-            print(link_form)
+            link = link_form.save(commit=False)
+            link.save()
+            link_form.save_m2m()
             return redirect('links:link_create')
     else:
         link_form = LinkForm()

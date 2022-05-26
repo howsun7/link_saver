@@ -10,8 +10,8 @@
         <tr>
           <th scope="row">1</th>
           <td>{{ link.url }}</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>{{ link.categories.all }}</td>
+          <td>{{ link.times_saved }}</td>
         </tr>
         {% endfor %}           
       </tbody>
