@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.utils import IntegrityError
 from model_utils.models import TimeStampedModel
 
 
@@ -12,7 +13,8 @@ class Link(TimeStampedModel):
     # title
     # short_desc / note
     url = models.URLField(verbose_name= 'URL')
-    times_saved = models.PositiveIntegerField()
+    times_saved = models.PositiveIntegerField(default=1)
     categories = models.ManyToManyField(Category)
 
-
+    def __str__(self):
+        return self.url
